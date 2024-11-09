@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Details</title>
+    <link rel="stylesheet" href="/bootstrap.css">
+</head>
+<body class="bg-light">
+<div class="container my-5">
+    <h1 class="text-center text-primary mb-4">Buyer Details</h1>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">Buyer Information</h5>
+            <p class="card-text">
+                <strong>ID:</strong> <span th:text="${buyer.id}"></span><br>
+                <strong>Name:</strong> <span th:text="${buyer.name}"></span><br>
+                <strong>Surname:</strong> <span th:text="${buyer.surname}"></span><br>
+                <strong>Patronymic:</strong> <span th:text="${buyer.otchestvo}"></span><br>
+                <strong>Gender:</strong> <span th:text="${buyer.gender}"></span><br>
+                <strong>Nationality:</strong> <span th:text="${buyer.nationality}"></span><br>
+                <strong>Height:</strong> <span th:text="${buyer.height}"></span> cm<br>
+                <strong>Weight:</strong> <span th:text="${buyer.weight}"></span> kg<br>
+                <strong>Year of Birth:</strong> <span th:text="${buyer.yearBirth}"></span><br>
+                <strong>Month of Birth:</strong> <span th:text="${buyer.monthBirth}"></span><br>
+                <strong>Birthday:</strong> <span th:text="${buyer.birthday}"></span><br>
+                <strong>Phone Number:</strong> <span th:text="${buyer.phoneNumber}"></span><br>
+                <strong>Credit Card Number:</strong> <span th:text="${buyer.creditCardNumber}"></span><br>
+                <strong>Bank Account:</strong> <span th:text="${buyer.bankAccount}"></span><br>
+            </p>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+
+<script src="/bootstrap.js"></script>
+</body>
+</html>

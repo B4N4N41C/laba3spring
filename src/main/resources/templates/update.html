@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма покупателя</title>
+    <link rel="stylesheet" href="/bootstrap.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Обновление информации о покупателе</h2>
+    <form action="#" th:action="@{/update}" th:object="${buyer}" method="post">
+        <input type="hidden" th:field="*{id}">
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Имя</label>
+            <input type="text" id="name" th:field="*{name}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="surname" class="form-label">Фамилия</label>
+            <input type="text" id="surname" th:field="*{surname}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="otchestvo" class="form-label">Отчество</label>
+            <input type="text" id="otchestvo" th:field="*{otchestvo}" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="gender" class="form-label">Пол</label>
+            <select id="gender" th:field="*{gender}" class="form-select" required>
+                <option value="" disabled selected>Выберите пол</option>
+                <option th:value="'Мужской'" th:text="'Мужской'"></option>
+                <option th:value="'Женский'" th:text="'Женский'"></option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="nationality" class="form-label">Национальность</label>
+            <input type="text" id="nationality" th:field="*{nationality}" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="height" class="form-label">Рост (см)</label>
+            <input type="number" id="height" th:field="*{height}" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="weight" class="form-label">Вес (кг)</label>
+            <input type="number" id="weight" th:field="*{weight}" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="yearBirth" class="form-label">Год рождения</label>
+            <input type="number" id="yearBirth" th:field="*{yearBirth}" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="monthBirth" class="form-label">Месяц рождения</label>
+            <input type="number" id="monthBirth" th:field="*{monthBirth}" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="birthday" class="form-label">Дата рождения</label>
+            <input type="number" id="birthday" th:field="*{birthday}" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="phoneNumber" class="form-label">Номер телефона</label>
+            <input type="tel" id="phoneNumber" th:field="*{phoneNumber}" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="creditCardNumber" class="form-label">Номер кредитной карты</label>
+            <input type="text" id="creditCardNumber" th:field="*{creditCardNumber}" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="bankAccount" class="form-label">Номер банковского счета</label>
+            <input type="text" id="bankAccount" th:field="*{bankAccount}" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Отправить</button>
+        <button type="reset" class="btn btn-secondary">Сброс</button>
+    </form>
+</div>
+
+<script src="/bootstrap.js"></script>
+</body>
+</html>

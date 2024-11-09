@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/bootstrap.css" rel="stylesheet">
+
+    <title>Список покупателей</title>
+</head>
+<body class="bg-light">
+<div class="container my-5">
+    <h1 class="text-center text-primary mb-4">Список покупателей</h1>
+    <div class="mb-3">
+        <a href="/create" class="btn btn-success">Создать нового покупателя</a>
+    </div>
+
+    <span th:if="${buyers.size() == 0}" class="alert alert-warning">Список покупателей пустой</span>
+
+    <table th:if="${buyers.size() > 0}" class="table table-striped table-hover">
+        <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Отчество</th>
+            <th>Пол</th>
+            <th>Национальность</th>
+            <th>Рост</th>
+            <th>Вес</th>
+            <th>Дата рождения</th>
+            <th>Телефон</th>
+            <th>Номер кредитной карты</th>
+            <th>Банковский счет</th>
+            <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="buyer : ${buyers}">
+            <td th:text="${buyer.id}"></td>
+            <td th:text="${buyer.name}"></td>
+            <td th:text="${buyer.surname}"></td>
+            <td th:text="${buyer.otchestvo}"></td>
+            <td th:text="${buyer.gender}"></td>
+            <td th:text="${buyer.nationality}"></td>
+            <td th:text="${buyer.height}"></td>
+            <td th:text="${buyer.weight}"></td>
+            <td th:text="${buyer.yearBirth} + '-' + ${buyer.monthBirth} + '-' + ${buyer.birthday}"></td>
+            <td th:text="${buyer.phoneNumber}"></td>
+            <td th:text="${buyer.creditCardNumber}"></td>
+            <td th:text="${buyer.bankAccount}"></td>
+            <td>
+                <a class="btn btn-secondary btn-sm" th:href="@{'/details/' + ${buyer.id}}">Детали</a>
+                <a class="btn btn-primary btn-sm" th:href="@{'/update/' + ${buyer.id}}">Обновить</a>
+                <a class="btn btn-danger btn-sm" th:href="@{'/delete/' + ${buyer.id}}">Удалить</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="/bootstrap.js"></script>
+</body>
+</html>
